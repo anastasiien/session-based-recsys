@@ -7,7 +7,7 @@
 ![pandas](https://img.shields.io/badge/pandas-150458?style=flat&logo=pandas&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat&logo=jupyter&logoColor=white)
 
-📓 [Открыть ноутбук в nbviewer](https://nbviewer.org/github/Anastasiien/sber/blob/master/session_recsys.ipynb)
+📓 [Открыть ноутбук в nbviewer](https://nbviewer.org/github/Anastasiien/session-based-recsys/blob/master/session_recsys.ipynb)
 
 ## Результаты
 
@@ -38,8 +38,8 @@
 ## Запуск
 
 ```bash
-git clone https://github.com/Anastasiien/sber.git
-cd sber
+git clone https://github.com/Anastasiien/session-based-recsys.git
+cd session-based-recsys
 pip install -r requirements.txt
 jupyter notebook session_recsys.ipynb
 ```
