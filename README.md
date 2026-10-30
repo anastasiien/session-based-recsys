@@ -7,6 +7,8 @@
 ![pandas](https://img.shields.io/badge/pandas-150458?style=flat&logo=pandas&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat&logo=jupyter&logoColor=white)
 
+📓 [Открыть ноутбук в nbviewer](https://nbviewer.org/github/Anastasiien/sber/blob/master/session_recsys.ipynb)
+
 ## Результаты
 
 | Модель | Hit@10 | MRR@10 | NDCG@10 |
@@ -14,6 +16,8 @@
 | Популярное (бейзлайн) | 0.3840 | 0.1806 | 0.2285 |
 | **Граф переходов** | **0.5142** | **0.2791** | **0.3350** |
 | Граф 2-го порядка | 0.4776 | 0.2362 | 0.2932 |
+
+![Сравнение моделей](images/results.png)
 
 - Граф переходов обходит бейзлайн на 13 п.п. по Hit@10 (+34%) и на 55% по MRR@10: он не только чаще попадает в топ-10, но и ставит правильный товар выше.
 - Учет двух последних товаров качество ухудшил. Данные слишком разреженные: при 400 товарах возможных пар около 160 тысяч, а сессий всего 2565.
@@ -36,7 +40,7 @@
 ```bash
 git clone https://github.com/Anastasiien/sber.git
 cd sber
-pip install pandas matplotlib jupyter
+pip install -r requirements.txt
 jupyter notebook session_recsys.ipynb
 ```
 
@@ -45,15 +49,19 @@ jupyter notebook session_recsys.ipynb
 ```
 ├── data/
 │   └── sessions.jsonl
+├── images/
+│   └── results.png
 ├── session_recsys.ipynb
+├── requirements.txt
 └── README.md
 ```
 
 ## Что дальше
 
-- Сглаживание вероятностей для редких переходов
-- Пары товаров с порогом по частоте вместо всех подряд
+- Сглаживание вероятностей и порог по частоте для пар товаров
 - Нейросетевые модели (SASRec, GRU4Rec) через RecBole
+- Разбор ошибок по сегментам: короткие/длинные сессии, популярные/редкие товары
+- Дизайн A/B-теста для проверки модели онлайн
 
 ---
 
